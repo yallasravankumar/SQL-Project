@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `vjim`.`studenteducationdata` (
   `rollnumber` INT NOT NULL,
   `graduation` VARCHAR(45) NULL,
   `graduationpercentage` VARCHAR(45) NULL,
-  `specialization` VARCHAR(45) NULL,
+  `specialization` VARCHAR(45) NULL,`specialization2` VARCHAR(45) NULL,
   PRIMARY KEY (`rollnumber`));
 
 
@@ -51,7 +51,7 @@ load data local infile 'C:/Users/3XP/Desktop/SQL 2/studenteducationdata.csv' int
 enclosed by '"'
 lines terminated by '\n' IGNORE 1 Rows
 (sscmarks,intermarks,
-  workeperience,rollnumber,graduation,graduationpercentage,specialization)
+  workeperience,rollnumber,graduation,graduationpercentage,specialization,specialization2)
  ;
 
 select * from studenteducationdata;
@@ -72,6 +72,3 @@ entrancescore,
 entrancepercentile,
   rollnumber)
  ;
-select * from entranceresults;
-
-select studentdata.rollnumber,firstname, entrancetest from studentdata ,entranceresults where studentdata.rollnumber= entranceresults.rollnumber;
